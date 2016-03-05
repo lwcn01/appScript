@@ -1,3 +1,3 @@
 ### appium
-appium for Android
-appium-python-client
+* appium for Android
+* appium-python-client
