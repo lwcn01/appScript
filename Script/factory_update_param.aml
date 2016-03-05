@@ -1,0 +1,4 @@
+--update_package=/udisk/update.zip
+--wipe_data
+--wipe_cache
+--wipe_media

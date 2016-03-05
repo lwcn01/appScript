@@ -1,0 +1,22 @@
+type= User
+count= 10
+speed= 1.0
+start data >>
+LaunchActivity(hottv.box.chinese,com.chinesetv.app.WelcomeActivity)
+UserWait(5000)
+#back to home
+captureDispatchKey(5109519,5109519,0,3,0,0,0,0)
+captureDispatchKey(5109519,5109519,1,3,0,0,0,0)
+UserWait(2000)
+#open mainland
+captureDispatchPointer(5109520,5109520,0,105,287,0,0,0,0,0,0,0);
+captureDispatchPointer(5109521,5109521,1,105,287,0,0,0,0,0,0,0);
+UserWait(5000)
+captureDispatchKey(5109522,5109522,0,3,0,0,0,0)
+captureDispatchKey(5109522,5109522,1,3,0,0,0,0)
+UserWait(2000)
+#open chinese
+captureDispatchPointer(5109523,5109523,0,296,287,0,0,0,0,0,0,0);
+captureDispatchPointer(5109524,5109524,1,296,287,0,0,0,0,0,0,0);
+UserWait(2000)
+
