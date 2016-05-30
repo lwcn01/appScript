@@ -48,3 +48,4 @@ if __name__ == '__main__':
     else:
         uinstall1()
         print('\n卸载完成\n')
+    os.system("pause")
