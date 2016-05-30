@@ -1,5 +1,4 @@
 
-
 private String getAppInfo() {
  		try {
  			String pkName = this.getPackageName();
