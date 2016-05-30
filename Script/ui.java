@@ -9,17 +9,17 @@ import com.android.uiautomator.testrunner.UiAutomatorTestCase;
 public class Uiautomator extends UiAutomatorTestCase {  
   
     public void testDemo() throws UiObjectNotFoundException {  
-    	//»Øµ½×ÀÃæ
+    	//å›åˆ°æ¡Œé¢
     	getUiDevice().pressHome();
     	getUiDevice().pressBack();
-        // ½øÈëµçÊÓ·ÖÀà
+        // è¿›å…¥ç”µè§†åˆ†ç±»
     	UiObject TV = new UiObject(new UiSelector().text("TV"));  
     	TV.click(); 
     	getUiDevice().pressBack();
-        // ½øÈë¸ü¶à·ÖÀà
+        // è¿›å…¥æ›´å¤šåˆ†ç±»
         UiObject Others = new UiObject(new UiSelector().text("More"));  
         Others.click();  
-        //ĞİÃß3Ãë  
+        //ä¼‘çœ 3ç§’  
         try {  
             Thread.sleep(3000);  
         } catch (InterruptedException e1) {  
@@ -27,7 +27,7 @@ public class Uiautomator extends UiAutomatorTestCase {
         }
         
     }
-     // ½øÈë
+     // è¿›å…¥
     public void scrollClickObject(String targetClassName,String targetName) throws UiObjectNotFoundException 
          {
           UiScrollable collectionObject = new UiScrollable(new UiSelector().scrollable(true));
@@ -41,6 +41,3 @@ public class Uiautomator extends UiAutomatorTestCase {
         }
               }
 }
-
-
-
