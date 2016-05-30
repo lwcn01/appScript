@@ -1,11 +1,11 @@
 #! /bin/bash
-adb shell pm clear xxx # ´ò¿ª×¢ÊÍ£¬¿ÉÒÔ¼ÆËãµÚÒ»´Î´ò¿ªµÄÇé¿ö¡£
+adb shell pm clear xxx # æ‰“å¼€æ³¨é‡Šï¼Œå¯ä»¥è®¡ç®—ç¬¬ä¸€æ¬¡æ‰“å¼€çš„æƒ…å†µã€‚
 adb shell input keyevent 3
 adb shell am start com.xxx.xxx.LauncherActivity
 start_time=`adb shell cat /proc/timer_list | awk 'NR==3{printf("%.0f",$3/1000000)}'`
 while true
 do
-# activity=`adb shell dumpsys SurfaceFlinger | grep "| xxxx"` # µÇÂ¼½çÃæ
+# activity=`adb shell dumpsys SurfaceFlinger | grep "| xxxx"` # ç™»å½•ç•Œé¢
 
 if [ $? = "0" ]; then
     echo $activity
