@@ -72,51 +72,60 @@ def monkey(packageName,event):
 def get_crash_log(packageName):
     try:
         os.system('adb pull /data/anr/traces.txt ' + PATH(os.path.join(log_dir,packageName + '_Crash_' + t +'.txt')))
-        #os.system(adb shell rm /data/anr/traces.txt)
     except Exception as e:
         print('ANR not found:',e)
+    else:
+        os.system('adb shell rm /data/anr/traces.txt')
 #def Devices_connect():
 
 if __name__ == '__main__':
-    try:
-        Devices_status()
-        which_os()
-        exist_env()
-    except Exception as e:
-        print(e)
+    Device_list = Devices_status()
+    if len(Device_list) == 0:
+       print('\n...ADB未连接...\n')
+       os.system('pause')
     else:
-        for x in range(10):
-            path = input('\n将APK文件拖入本窗口中...')
-            try:
-                if re.findall(r'.apk$',path)[0] == ".apk":
-                    app_name = os.path.splitext(path)[0].split('\\')[-1]
-            except:
-                print('\nAPK文件不存在或非APK文件\n')
-            else:
-                try:
-                    packageName = package(path)
-                    exist_dir(app_name)
-                    log_cat(packageName)
-                except Exception as e:
-                    print(e)
+        try:
+            which_os()
+            exist_env()
+        except Exception as e:
+            print(e)
+        else:
+            for x in range(10):
+                path = input('\n...将APK文件拖入本窗口中...')
+                if not os.path.exists(path.strip()):
+                    print('\n...文件路径错误...\n')
                 else:
-                    print('\n\'%s\'开始Monkey压力测试...\n' %app_name)
                     try:
-                        event = int(input('MonkeyTest events: '))
-                    except Exception as e:
-                        print(e)
+                        if re.findall(r'.apk$',path)[0] == ".apk":
+                            app_name = os.path.splitext(path)[0].split('\\')[-1]
+                    except:
+                        print('\n...APK文件不存在或非APK文件...\n')
                     else:
-                        if event < 0:
-                            print('\nevent数值错误\n')
+                        try:
+                            packageName = package(path)
+                            exist_dir(app_name)
+                            log_cat(packageName)
+                        except Exception as e:
+                            print(e)
+                        except:
+                            print('\n...APK文件异常...\n')
                         else:
+                            print('\n\'%s\'...开始Monkey压力测试...\n' %app_name)
                             try:
-                                monkey(packageName,event)
+                                event = int(input('MonkeyTest events: '))
                             except Exception as e:
                                 print(e)
                             else:
-                                get_crash_log(packageName)
-                                print('\nMonkey测试已完成，桌面生成%s目录文件...\n'%app_name)
-            finally:
-                os.system('pause')
-    finally:
+                                if event < 0:
+                                    print('\n...event数值错误...\n')
+                                else:
+                                    try:
+                                        monkey(packageName,event)
+                                    except Exception as e:
+                                        print(e)
+                                    else:
+                                        get_crash_log(packageName)
+                                        print('\n...Monkey测试已完成，桌面生成%s目录文件...\n'%app_name)
+        finally:
+            os.system('pause')
         sys.exit()
