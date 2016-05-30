@@ -1,7 +1,8 @@
 #! /bin/bash
 adb shell pm clear xxx # 打开注释，可以计算第一次打开的情况。
 adb shell input keyevent 3
-adb shell am start com.xxx.xxx.LauncherActivity
+#adb shell am start com.xxx.xxx.LauncherActivity
+adb shell monkey -p com.my.pkg -c android.intent.category.LAUNCHER 1
 start_time=`adb shell cat /proc/timer_list | awk 'NR==3{printf("%.0f",$3/1000000)}'`
 while true
 do
