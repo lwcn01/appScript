@@ -1,6 +1,6 @@
 # ========================================================
 # Summary        :run
-# Author         :tong shan
+# Author         :
 # Create Date    :2015-10-09
 # Amend History  :
 # Amended by     :
@@ -22,7 +22,7 @@ log = Log.myLog.getLog()
 
 # ========================================================
 # Summary        :myServer
-# Author         :tong shan
+# Author         :
 # Create Date    :2015-10-10
 # Amend History  :
 # Amended by     :
@@ -45,7 +45,7 @@ class myServer(threading.Thread):
 
 # ========================================================
 # Summary        :Alltest
-# Author         :tong shan
+# Author         :
 # Create Date    :2015-10-10
 # Amend History  :
 # Amended by     :
