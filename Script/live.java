@@ -9,30 +9,30 @@ import com.android.uiautomator.testrunner.UiAutomatorTestCase;
   
 public class Uiautomator extends UiAutomatorTestCase {  
     public void testDemo() throws UiObjectNotFoundException, RemoteException {  
-    	//»Øµ½×ÀÃæ
+    	//å›åˆ°æ¡Œé¢
     	getUiDevice().pressHome();
     	getUiDevice().pressBack();
     	getUiDevice().unfreezeRotation();
     	getUiDevice().setOrientationLeft();
     	getUiDevice().setOrientationRight();
-        // ½øÈëµçÊÓ·ÖÀà
+        // è¿›å…¥ç”µè§†åˆ†ç±»
         UiObject TV = new UiObject(new UiSelector().text("TV"));  
         TV.click();  
-        // ½øÈëÖĞÎÄµçÊÓ
+        // è¿›å…¥ä¸­æ–‡ç”µè§†
     	UiObject Chinese= new UiObject(new UiSelector().text("ChineseTV"));  
     	if(Chinese.exists() && Chinese.isEnabled())
     	{
     		Chinese.click(); 
     	}
     	
-        //ĞİÃß10Ãë  
+        //ä¼‘çœ 10ç§’  
         try {  
             Thread.sleep(10000);  
         } catch (InterruptedException e1) {  
             e1.printStackTrace();  
         }
         
-      // ½øÈë½ÚÄ¿ÁĞ±í
+      // è¿›å…¥èŠ‚ç›®åˆ—è¡¨
         UiObject okButton = new UiObject(new UiSelector().text("OK").className("android.widget.Button"));
     	if(okButton.exists() && okButton.isEnabled())
     	{
