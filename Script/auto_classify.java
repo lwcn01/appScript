@@ -10,23 +10,23 @@ import com.android.uiautomator.testrunner.UiAutomatorTestCase;
 public class Uiautomator extends UiAutomatorTestCase {  
 	
     public void testDemo() throws UiObjectNotFoundException, RemoteException {  
-    	//»Øµ½×ÀÃæ
+    	//å›åˆ°æ¡Œé¢
     	getUiDevice().pressBack();
     	getUiDevice().pressHome();
     	getUiDevice().pressBack();
     	getUiDevice().unfreezeRotation();
     	getUiDevice().setOrientationLeft();
     	getUiDevice().setOrientationRight();
-        // ½øÈë¸ü¶à·ÖÀà
+        // è¿›å…¥æ›´å¤šåˆ†ç±»
         UiObject More = new UiObject(new UiSelector().text("More"));  
         More.click(); 
-        // ½øÈë±ÚÖ½ÉèÖÃ
+        // è¿›å…¥å£çº¸è®¾ç½®
  
     	UiObject Wallpaper= new UiObject(new UiSelector().text("Wallpaper"));  
     	Wallpaper.click(); 
     	getUiDevice().pressEnter(); 
     	getUiDevice().pressBack();
-    	   //ĞİÃß3Ãë  
+    	   //ä¼‘çœ 3ç§’  
         try {  
             Thread.sleep(3000);  
         } catch (InterruptedException e1) {  
@@ -92,7 +92,4 @@ public class Uiautomator extends UiAutomatorTestCase {
     }
  
 }
-
-
-
 
